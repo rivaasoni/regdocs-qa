@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+.env
+
+# RegDocs Q&A
+# The source PDFs are large and are public documents you can re-download.
+# chunks.json, which is built from them, IS tracked, so a fresh clone still
+# has everything Phase 3 needs. Drop your PDFs in docs/ and rerun ingest.py.
+docs/*.pdf
+docs/*.PDF
