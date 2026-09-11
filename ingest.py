@@ -16,9 +16,18 @@ Run it with:
 """
 
 import json
+import logging
 from pathlib import Path
 
 from pypdf import PdfReader
+
+
+# pypdf prints a warning every time it meets a font it cannot fully decode.
+# Real-world regulatory PDFs use a lot of those fonts, so the warnings can bury
+# the output in thousands of lines. They are only a heads-up, not an error, and
+# the text here comes out clean. This line hides them.
+# If your extracted text ever looks garbled, change ERROR to WARNING to see them.
+logging.getLogger("pypdf").setLevel(logging.ERROR)
 
 
 # ---------------------------------------------------------------------------
