@@ -24,8 +24,13 @@ These rules matter more than speed. The author is new to coding.
   Never print, log, or commit key values.
 - **Input documents:** PDFs go in `docs/`. They are the source of truth for
   every answer the app gives.
-- **Models:** Claude `claude-sonnet-5` for answering. Voyage for embeddings;
-  confirm the current embedding model name at docs.voyageai.com before use.
+- **Models:** Claude `claude-sonnet-5` for answering. Voyage `voyage-4` for
+  embeddings, which returns 1024 numbers per chunk.
+- **Voyage rate limits:** an account with no payment method is capped at 3
+  requests and 10,000 tokens per minute. Our corpus is ~927,000 tokens, so a
+  full embed run takes ~100 minutes on the free tier. `embed.py` paces itself
+  and saves progress so it can resume. Adding a payment method and setting
+  `FREE_TIER = False` in `embed.py` cuts the run to a couple of minutes.
 
 ## The five phases
 
@@ -49,14 +54,24 @@ Chunking happens per page rather than per document, so every chunk keeps an
 accurate page number and later phases can cite a real page. All chunks are
 saved to `chunks.json`, and the script prints the total count plus one sample.
 
-### Phase 3 - Embedding and retrieval
+### Phase 3 - Embedding and retrieval (code done)
 
-Turn each chunk's text into an embedding (a list of numbers capturing its
-meaning) using the Voyage API. Store the vectors alongside the chunks. To
-answer a question, embed the question the same way and compare it to every
-chunk vector using cosine similarity computed with numpy. Cosine similarity
-measures the angle between two vectors, so it scores chunks by meaning rather
-than by shared keywords. Return the closest chunks.
+`embed.py` turns each chunk's text into an embedding, a list of 1024 numbers
+capturing its meaning, using Voyage's `voyage-4` model with
+`input_type="document"`. Every vector is scaled to length 1 before saving, so
+cosine similarity later reduces to a plain dot product. The result is saved to
+`embeddings.npy`, where row N lines up with chunk N of `chunks.json`. That
+ordering is the only thing tying the two files together, so they must always
+be rebuilt as a pair.
+
+`search.py` embeds your question with `input_type="query"`, then scores it
+against all 2,162 chunks in one numpy multiplication and returns the closest
+three. Cosine similarity measures the angle between two vectors, so it ranks by
+meaning rather than shared keywords. A question about "moving money
+electronically" finds a passage about "electronic fund transfers".
+
+`embed.py` will not re-embed an up-to-date `embeddings.npy`, because doing so
+costs real money. Delete that file to force a rebuild.
 
 ### Phase 4 - Asking questions
 
@@ -85,5 +100,8 @@ Four upgrades, in whatever order makes sense:
 |---|---|
 | `ingest.py` | Phase 2. PDFs to `chunks.json`. |
 | `chunks.json` | Generated output. Rebuild it by rerunning `ingest.py`. |
+| `embed.py` | Phase 3a. `chunks.json` to `embeddings.npy` via Voyage. |
+| `search.py` | Phase 3b. Finds the chunks closest to a question. |
+| `embeddings.npy` | 2,162 vectors of 1,024 numbers. Tracked in git. |
 | `docs/` | Input PDFs. |
 | `.env` | API keys. Never committed. |

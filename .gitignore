@@ -224,3 +224,10 @@ __marimo__/
 # has everything Phase 3 needs. Drop your PDFs in docs/ and rerun ingest.py.
 docs/*.pdf
 docs/*.PDF
+
+# Phase 3 working files
+# embeddings_partial.npy is resume state for an interrupted embed.py run.
+# embed_run.log is just console output. embeddings.npy itself IS tracked,
+# because rebuilding it means another ~100 minute API run.
+embeddings_partial.npy
+embed_run.log
