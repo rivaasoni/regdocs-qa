@@ -89,17 +89,22 @@ sensible default here.
 
 `README.md` documents the project for people arriving at the repository.
 
-### Phase 5 - Making it real
+### Phase 5 - Making it real (3 of 4 done)
 
-Four upgrades, in whatever order makes sense:
-
-- **Chroma** - replace the hand-rolled numpy search with a real vector
+- **Evals (done)** - `evals/run.py` scores 15 questions on retrieval hit rate,
+  answer correctness via Claude as judge, and refusal accuracy. Current score
+  14/15. Run it before and after any change to retrieval or prompting.
+  Known failure: q6 gives an incomplete answer because the 45-day extension
+  conditions do not fit in its top 3 chunks. Known weakness: the retrieval
+  metric is document-level, so it cannot see that q7's top chunks were RESPA
+  rather than Regulation E, since both live in the same PDF.
+- **Streamlit (done)** - `app.py`. Verified serving; caches the index with
+  `st.cache_resource` because Streamlit reruns the script on every interaction.
+- **Docker (written, NOT verified)** - `Dockerfile` plus pinned
+  `requirements.txt`. Docker is not installed on the development machine, so
+  the image has never been built. Build it before trusting it.
+- **Chroma (not started)** - replace the numpy search with a real vector
   database, so lookups stay fast as the document set grows.
-- **Evals** - a set of questions with known-correct answers, run automatically,
-  to measure whether changes make the system better or worse.
-- **Streamlit** - a simple web interface so someone can ask questions without
-  touching a terminal.
-- **Docker** - package the app so it runs the same way on any machine.
 
 ## Files
 
