@@ -1,0 +1,7 @@
+# Keep secrets and bulk out of the image.
+.env
+.git
+docs/
+evals/*.log
+__pycache__/
+*.pyc

@@ -94,6 +94,63 @@ hours under that limit; `embed.py` paces itself, saves progress after every
 request, and resumes if interrupted. Adding a payment method and setting
 `FREE_TIER = False` in `embed.py` reduces the full run to a couple of minutes.
 
+## Web interface
+
+A Streamlit app gives you the same thing without a terminal:
+
+```
+conda run -n regdocs streamlit run app.py
+```
+
+Then open http://localhost:8501. The sidebar lists the loaded documents and how
+many pages of each were indexed, so it is always clear what can be asked about.
+Each source is expandable, showing the full passage and a bar for its similarity
+score.
+
+![Screenshot of the RegDocs Q&A interface](docs/screenshot.png)
+
+*Screenshot placeholder. Run the app, take a screenshot, and save it to
+`docs/screenshot.png`. Note that `docs/*.pdf` is gitignored but PNG files there
+are not, so the image will commit normally.*
+
+## Running with Docker
+
+Docker packages the app with its dependencies so it runs identically anywhere.
+
+```
+docker build -t regdocs-qa .
+docker run -p 8501:8501 --env-file .env regdocs-qa
+```
+
+Your API keys are passed in at run time with `--env-file` rather than copied
+into the image, so they never end up baked into something you might share.
+`.dockerignore` excludes `.env` as a second line of defence.
+
+The image includes the prebuilt `chunks.json` and `embeddings.npy`, so the
+container starts ready to answer questions and never needs to repeat the
+two-hour embedding run.
+
+## Deploying to Hugging Face Spaces
+
+Hugging Face Spaces will host this for free.
+
+1. Create a new Space at huggingface.co/new-space. Choose **Streamlit** as the
+   SDK, or **Docker** if you would rather it use the `Dockerfile` here.
+2. Add your API keys as secrets. In the Space, go to Settings, then Variables
+   and secrets, and add `ANTHROPIC_API_KEY` and `VOYAGE_API_KEY` as **secrets**,
+   not as public variables. The app reads them from the environment, so no code
+   changes are needed. Never commit `.env` to the Space.
+3. Push the code, including `chunks.json` and `embeddings.npy`, so the Space
+   does not have to rebuild the index. Those two files total about 13MB, which
+   is within normal Git limits, but if you add many more documents you will need
+   [Git LFS](https://huggingface.co/docs/hub/repositories-getting-started#uploading-large-files).
+4. Streamlit Spaces run `app.py` automatically. For a Docker Space, Hugging Face
+   expects the app on port 7860 rather than 8501, so change the `EXPOSE` line and
+   the `--server.port` in the `Dockerfile` accordingly.
+5. Keep an eye on the Voyage rate limit. A free Voyage key allows three
+   questions per minute across everyone using your Space at once, so a public
+   link will hit that quickly. Add a payment method before sharing it widely.
+
 ## Examples
 
 Real output, lightly trimmed for length.
@@ -222,9 +279,8 @@ to track across changes rather than an absolute measure of quality.
   question 6 exposed as the weak spot.
 - **Chroma** — replace the hand-rolled numpy search with a real vector database,
   so lookups stay fast as the document set grows beyond a few thousand chunks.
-- **Streamlit** — a simple web interface, so someone can ask questions without
-  touching a terminal.
-- **Docker** — package the whole thing so it runs identically on any machine.
+  This is the last remaining piece of the original plan; Streamlit and Docker
+  are covered above.
 
 ## Files
 
@@ -236,6 +292,9 @@ to track across changes rather than an absolute measure of quality.
 | `ask.py` | Answers a question with Claude, citing sources |
 | `chunks.json` | 2,162 chunks with source file and page |
 | `embeddings.npy` | 2,162 vectors of 1,024 numbers |
+| `app.py` | Streamlit web interface |
+| `Dockerfile` | Packages the app to run anywhere |
+| `requirements.txt` | Pinned dependency versions |
 | `evals/questions.json` | 15 test questions with reference answers |
 | `evals/run.py` | Runs the eval and prints the scorecard |
 | `evals/results.json` | Latest eval output |

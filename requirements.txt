@@ -1,0 +1,9 @@
+# Pinned to the versions this project was built and tested against.
+# Pinning means a fresh install behaves the same way months from now,
+# rather than quietly breaking when a dependency changes.
+pypdf==6.18.1
+numpy==2.4.6
+voyageai==0.5.0
+anthropic==1.5.0
+python-dotenv==1.2.3
+streamlit==1.63.0
