@@ -16,6 +16,7 @@ Run it with:
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 import numpy as np
@@ -28,7 +29,8 @@ EMBEDDINGS_FILE = Path("embeddings.npy")
 
 MODEL = "voyage-4"  # must be the same model embed.py used, or the numbers
                     # will not be comparable at all
-TOP_N = 3           # how many chunks to show. Phase 4 will also use 3.
+TOP_N = 3           # how many chunks to show. Phase 4 also uses 3.
+MAX_RETRIES = 4     # how many times to wait out a Voyage rate limit
 
 
 def load_everything():
@@ -60,6 +62,36 @@ def load_everything():
     return chunks, vectors
 
 
+def embed_question(client, question):
+    """
+    Turn the question into a vector, retrying politely if Voyage says slow down.
+
+    A Voyage account with no payment method allows only 3 requests a minute,
+    and every question you ask costs one. Asking several in quick succession
+    therefore hits that limit. Rather than crashing with a wall of red text,
+    we wait and try again, because a rate limit clears entirely on its own.
+    """
+    for attempt in range(MAX_RETRIES):
+        try:
+            return client.embed(
+                [question], model=MODEL, input_type="query"
+            ).embeddings[0]
+        except Exception as error:
+            is_rate_limit = "rate limit" in str(error).lower() or "429" in str(error)
+            if attempt == MAX_RETRIES - 1 or not is_rate_limit:
+                if is_rate_limit:
+                    raise SystemExit(
+                        "\nVoyage is still rate limiting us after several tries.\n"
+                        "A free Voyage account allows 3 requests per minute.\n"
+                        "Wait a minute and try again, or add a payment method at\n"
+                        "https://dashboard.voyageai.com to lift the limit."
+                    )
+                raise
+            wait = 25 * (attempt + 1)  # 25s, 50s, 75s
+            print(f"  Voyage rate limit hit. Waiting {wait}s, then retrying...")
+            time.sleep(wait)
+
+
 def find_best_chunks(question, chunks, vectors, client, top_n=TOP_N):
     """
     Score every chunk against the question and return the best ones.
@@ -81,8 +113,7 @@ def find_best_chunks(question, chunks, vectors, client, top_n=TOP_N):
        we need in order to look the original chunks back up. It sorts smallest
        first, so [::-1] flips it to put the best matches at the front.
     """
-    q = np.array(client.embed([question], model=MODEL, input_type="query").embeddings[0],
-                 dtype=np.float32)
+    q = np.array(embed_question(client, question), dtype=np.float32)
     q = q / np.linalg.norm(q)
 
     scores = vectors @ q

@@ -73,14 +73,21 @@ electronically" finds a passage about "electronic fund transfers".
 `embed.py` will not re-embed an up-to-date `embeddings.npy`, because doing so
 costs real money. Delete that file to force a rebuild.
 
-### Phase 4 - Asking questions
+### Phase 4 - Asking questions (done)
 
-`ask.py` takes a question, retrieves the top 3 chunks from Phase 3, and passes
-them to Claude as context with an instruction to answer only from those chunks
-and to cite the source file and page. If the chunks do not contain the answer,
-Claude should say so rather than guess, since a confident wrong answer about a
-regulation is worse than no answer. Also write a `README.md` explaining what
-the project does and how to run it.
+`ask.py` takes a question, reuses `search.py` to retrieve the top 3 chunks, and
+passes them to Claude `claude-sonnet-5` as numbered context labelled with each
+passage's filename and page. The system prompt requires Claude to answer only
+from those passages, cite filename and page for every claim, and reply exactly
+`Not found in the documents` when the passages do not contain the answer.
+Verified: an off-topic question returns that refusal, with retrieval scores
+around 0.33 against 0.6-0.7 for genuine questions.
+
+Do not pass `temperature` to `claude-sonnet-5`; it is rejected with a 400.
+Leaving `thinking` unset lets Claude decide how much to think, which is the
+sensible default here.
+
+`README.md` documents the project for people arriving at the repository.
 
 ### Phase 5 - Making it real
 
@@ -102,6 +109,8 @@ Four upgrades, in whatever order makes sense:
 | `chunks.json` | Generated output. Rebuild it by rerunning `ingest.py`. |
 | `embed.py` | Phase 3a. `chunks.json` to `embeddings.npy` via Voyage. |
 | `search.py` | Phase 3b. Finds the chunks closest to a question. |
+| `ask.py` | Phase 4. Answers a question with Claude, citing sources. |
+| `README.md` | Project documentation for people reading the repo. |
 | `embeddings.npy` | 2,162 vectors of 1,024 numbers. Tracked in git. |
 | `docs/` | Input PDFs. |
 | `.env` | API keys. Never committed. |
