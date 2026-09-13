@@ -231,3 +231,6 @@ docs/*.PDF
 # because rebuilding it means another ~100 minute API run.
 embeddings_partial.npy
 embed_run.log
+
+# Eval run logs (the results themselves are tracked)
+evals/*.log

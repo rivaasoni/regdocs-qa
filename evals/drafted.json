@@ -1,0 +1,347 @@
+[
+  {
+    "id": 1,
+    "question": "How many days does a consumer have to report an error after receiving a periodic statement?",
+    "should_refuse": false,
+    "drafted_answer": "A consumer's notice of error must be received by the financial institution \"not later than 60 days after sending a periodic statement or other documentation first reflecting the alleged error\" (consumer compliance handbook.pdf, p. 97; CFPB EFTA examination procedures.pdf, p. 27).",
+    "retrieved": [
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 97,
+        "score": 0.586
+      },
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 27,
+        "score": 0.584
+      },
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 34,
+        "score": 0.58
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "How many business days does a financial institution have to investigate a notice of error?",
+    "should_refuse": false,
+    "drafted_answer": "A financial institution must complete its investigation within 10 business days, though it may take up to 45 days if it provisionally credits the consumer's account (including interest, where applicable) within that initial 10 business-day period, advises the consumer of the provisional crediting within two business days, and gives the consumer full use of the funds during the investigation (CFPB EFTA examination procedures.pdf, p. 28).",
+    "retrieved": [
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 97,
+        "score": 0.669
+      },
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 28,
+        "score": 0.653
+      },
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 28,
+        "score": 0.643
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is a consumer's maximum liability for an unauthorized transfer if they notify within two business days?",
+    "should_refuse": false,
+    "drafted_answer": "A consumer's maximum liability is the **lesser of $50 or the total amount of unauthorized transfers** that occur before notice to the financial institution (consumer compliance handbook.pdf, p. 95).",
+    "retrieved": [
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 25,
+        "score": 0.641
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 95,
+        "score": 0.641
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 95,
+        "score": 0.621
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What information must be included in an initial disclosure under Regulation E?",
+    "should_refuse": false,
+    "drafted_answer": "Under 12 CFR 1005.7(b), a financial institution's initial disclosures must include:\n\n- A summary of the consumer's liability for unauthorized transfers under 12 CFR 1005.6 or under state or other applicable law or agreement (12 CFR 1005.7(b)(1))\n- The telephone number and address of the person or office to be notified when the consumer believes an unauthorized EFT has been or may be made (12 CFR 1005.7(b)(2))\n- The financial institution's business days (12 CFR 1005.7(b)(3))\n- The type of EFTs the consumer may make and any limits on the frequency and dollar amount of transfers (\"If details on the limits on frequency and dollar amount are essential to maintain the security of the system, they need not be disclosed\") (12 CFR 1005.7(b)(4))\n- Any fees imposed by the financial institution for EFTs or for the right to make transfers (12 CFR 1005.7(b)(5))\n- A summary of the consumer's right to receive receipts and periodic statements, as provided in 12 CFR 1005.9, and notices regarding preauthorized transfers as provided in 12 CFR 1005.10(a) and 1005.10(d) (12 CFR 1005.7(b)(6))\n- A summary of the consumer's right to stop payment of a preauthorized EFT and the procedure for placing a stop payment order, as provided in 12 CFR 1005.10(c) (12 CFR 1005.7(b)(7))\n- A summary of the financial institution's liability to the consumer for its failure to make or to stop certain transfers under the Electronic Fund Transfer Act (12 CFR 1005.7(b)(8))\n- The circumstances under which the financial institution, in the ordinary course of business, may disclose information to third parties concerning the consumer's account (12 CFR 1005.7(b)(9))\n- An error resolution notice that is substantially similar to Model Form A-3 in Appendix A (12 CFR 1005.7(b)(10))\n- A notice that a fee may be imposed by an ATM operator (as defined in 12 CFR 1005.16(a)) when the consumer initiates an EFT or makes a balance inquiry and by any network used to complete the transaction\n\n(consumer compliance handbook.pdf, p. 137)\n\nThese disclosures must be provided \"before the first EFT is made or at the time the consumer contracts for an EFT service\" (consumer compliance handbook.pdf, p. 87; CFPB EFTA examination procedures.pdf, p. 11).",
+    "retrieved": [
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 11,
+        "score": 0.515
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 87,
+        "score": 0.511
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 137,
+        "score": 0.451
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What is a remittance transfer under the EFTA?",
+    "should_refuse": false,
+    "drafted_answer": "Under EFTA Regulation E Subpart B, a **remittance transfer** is \"an electronic transfer of funds, requested by a consumer in a state, to a designated recipient that is sent by a remittance transfer provider.\" The term applies \"whether or not the consumer holds an account and whether or not the transfer is an electronic fund transfer\" (CFPB EFTA examination procedures.pdf, p. 49; consumer compliance handbook.pdf, p. 102).\n\nAn electronic transfer of funds occurs when:\n- \"A provider makes an electronic book entry between different settlement accounts to make the remittance transfer,\" or\n- \"A payment is made under a bill-payment service available to a consumer via computer or other electronic means,\" except in certain circumstances where a check, draft, or similar paper instrument drawn on a consumer's account under the bill-payment service is mailed abroad (CFPB EFTA examination procedures.pdf, p. 49).\n\nNotably, \"an electronic transfer of funds does not occur where a sender mails funds directly to a recipient, or funds are provided to a courier for delivery to a foreign country\" (CFPB EFTA examination procedures.pdf, p. 49).\n\nWhether a consumer has \"requested\" a remittance transfer depends on facts and circumstances: a sender who asks a provider to send a transfer and provides transaction-specific information to send funds to a designated recipient has requested a remittance transfer, but \"a consumer who solely inquires about that day's rates and fees to send to a particular country has not requested\" one (consumer compliance handbook.pdf, p. 107).",
+    "retrieved": [
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 49,
+        "score": 0.607
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 107,
+        "score": 0.596
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 102,
+        "score": 0.593
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "When can an institution extend its error investigation to 45 days, and what must it do first?",
+    "should_refuse": false,
+    "drafted_answer": "Under 12 CFR 1005.11(c)(3), the 10-day investigation period may be extended to 45 days if certain conditions are met — but the passages specify that this 45-day period is itself extended to 90 days in two circumstances: (1) if the notice involves an error that occurred within 30 days after the first deposit to the account was made (in which case the periods extend from 10 and 45 days to 20 and 90 days), or (2) \"if the notice of error involves a transaction that was not initiated in a state or resulted from a point-of-sale debit card transaction\" (consumer compliance handbook.pdf, p. 97; CFPB EFTA examination procedures.pdf, p. 29).\n\nRegarding what the institution must do first when using the extended timeframe (beyond the standard 10 days), the passages note that the financial institution must provisionally credit the consumer's account, since the process described includes \"notify[ing] the consumer that the provisional credit has been made final\" once the investigation concludes (consumer compliance handbook.pdf, p. 97). The passages do not further detail the specific prerequisite steps for invoking the 45-day extension itself.",
+    "retrieved": [
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 97,
+        "score": 0.514
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 97,
+        "score": 0.503
+      },
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 29,
+        "score": 0.489
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What must an institution do if it determines no error occurred?",
+    "should_refuse": false,
+    "drafted_answer": "Based on the passages, this depends on which regulation applies:\n\n**Under RESPA/Regulation X (mortgage servicing errors):** If the institution determines that no error occurred, it must provide \"a written notice stating that the institution has determined that no error occurred, the reasons for its determination, the borrower's right to request documents relied upon by the institution in reaching its determination and how to do so, and contact information for further assistance\" (12 CFR 1024.35(e)) (consumer compliance handbook.pdf, p. 584).\n\nIf the borrower then requests supporting documentation, the institution must provide the documents it relied upon within 15 days (excluding legal public holidays, Saturdays, and Sundays), or if it withholds documents as confidential, proprietary, or privileged, it must provide written notification of this within the same 15-day period (12 CFR 1024.35(e)(4)) (consumer compliance handbook.pdf, p. 585).\n\n**Under EFTA/Regulation E (electronic fund transfer errors):** If the institution determines that no error occurred (or that an error occurred in a manner or amount different from that described by the consumer), it must \"send a written explanation of its findings to the consumer and note the consumer's right to request the documents the financial institution used in making its determination\" (12 CFR 1005.11(d)(1)). It must also notify the consumer of the date and amount of debiting of any provisionally credited amount and confirm that it will continue to honor checks, drafts, and preauthorized transfers for five business days as if the funds had not been debited (12 CFR 1005.11(d)(2)) (CFPB EFTA examination procedures.pdf, p. 119).",
+    "retrieved": [
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 585,
+        "score": 0.523
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 584,
+        "score": 0.507
+      },
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 119,
+        "score": 0.506
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What are the main risks associated with ACH transactions for a financial institution?",
+    "should_refuse": false,
+    "drafted_answer": "Based on the passages, ACH operations pose several main risks for financial institutions:\n\n- **Credit risk**: An ODFI (Originating Depository Financial Institution) \"incurs credit risk upon initiating the [ACH credit] entries until its customer funds the account\" and remains responsible for settling payments even if outsourced to third-party service providers. An RDFI also incurs credit risk when it allows a debit to overdraw its customer's account (FFIEC retail payment systems booklet pdf.pdf, p. 53–54).\n\n- **Liquidity risk**: \"an ODFI may not be able to settle (collect) an ACH debit, or an RDFI may not be able to settle an ACH credit because of fraud, service disruption, or the default of an ACH Network participant,\" which \"could impair the financial institution's ability to meet its obligations and result in losses\" (FFIEC retail payment systems booklet pdf.pdf, p. 54).\n\n- **Operational risk**: Given \"the highly automated nature of ACH activities,\" operational risks require close management, including clear policies/procedures, timely monitoring of exceptions and processing delays, and tested contingency plans \"given the time sensitive nature of ACH transactions\" (FFIEC retail payment systems booklet pdf.pdf, p. 54).\n\n- **Fraud risk**: While \"fraud risk in traditional ACH activity is low, new ACH products and services, such as one-time ACH debits from Internet-based and telemarketing merchants (WEB and TEL) pose considerable fraud potential,\" since strong front-end fraud controls typical of recurring debits are often absent in these transaction types (FFIEC retail payment systems booklet pdf.pdf, p. 45).\n\n- **Compliance/legal risk**: Failure to comply with NACHA rules \"exposes [an institution] to contractual liability and fines,\" and Regulation E's \"notice, authorization, error resolution, and timing requirements\" are particularly important, with noncompliance exposing the institution \"to litigation and civil money penalties.\" Institutions must also monitor compliance with BSA and OFAC requirements (FFIEC retail payment systems booklet pdf.pdf, p. 54).",
+    "retrieved": [
+      {
+        "source": "FFIEC retail payment systems booklet pdf.pdf",
+        "page": 53,
+        "score": 0.677
+      },
+      {
+        "source": "FFIEC retail payment systems booklet pdf.pdf",
+        "page": 54,
+        "score": 0.663
+      },
+      {
+        "source": "FFIEC retail payment systems booklet pdf.pdf",
+        "page": 45,
+        "score": 0.636
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What controls should a financial institution have over third-party payment processors?",
+    "should_refuse": false,
+    "drafted_answer": "Based on the passages, financial institutions should implement the following controls over third-party payment processors:\n\n- **Contractual and due diligence controls**: Institutions should have \"comprehensive contract provisions and adequate due diligence processes\" and should \"monitor service providers for compliance with contracts and service level agreements\" (FFIEC retail payment systems booklet pdf.pdf, p. 51).\n\n- **Transaction monitoring**: \"Effective monitoring should include the review of select retail payment transaction items to ensure they are accurate and processed timely\" (FFIEC retail payment systems booklet pdf.pdf, p. 51).\n\n- **Internal control coverage**: Controls—whether manual or automated—should \"address the areas of transaction initiation, data entry, computer processing, and distribution of output reports,\" applying to checks (including RDC), electronically created payment orders, and electronic bankcard, debit card, and ACH transactions (FFIEC retail payment systems booklet pdf.pdf, p. 51).\n\n- **Information security**: Institutions \"must also maintain effective control over service provider access to customer and financial institution information consistent with GLBA section 501(b)\" (FFIEC retail payment systems booklet pdf.pdf, p. 51).\n\n- **For third-party ACH processing specifically**:\n  - The institution \"should establish controls over TSP operations, and the ODFI should maintain control over its settlement accounts\" (FFIEC retail payment systems booklet pdf.pdf, p. 55).\n  - The institution should \"review and assess all audits of its service provider's internal controls,\" including the annual NACHA-required compliance audit (FFIEC retail payment systems booklet pdf.pdf, p. 55).\n  - Agreements with a TSP having direct access to an ACH operator should include: a requirement that the TSP obtain \"prior approval of the ODFI before originating ACH transactions for originators under the ODFI routing number\"; \"ODFI dollar limits for files that a TSP deposits with the ACH operator,\" with notification to the ODFI of any file exceeding those limits before deposit; and \"a provision that restricts the TSP's ability to initiate corrections to files already transmitted to the ACH operator\" (FFIEC retail payment systems booklet pdf.pdf, p. 55).\n\n- **Broader risk management program**: Institutions should maintain \"a comprehensive and effective vendor and third-party service provider risk management and oversight program\" given increasing nonbank participation in payment processing (FFIEC retail payment systems booklet pdf.pdf, p. 39).",
+    "retrieved": [
+      {
+        "source": "FFIEC retail payment systems booklet pdf.pdf",
+        "page": 51,
+        "score": 0.612
+      },
+      {
+        "source": "FFIEC retail payment systems booklet pdf.pdf",
+        "page": 55,
+        "score": 0.589
+      },
+      {
+        "source": "FFIEC retail payment systems booklet pdf.pdf",
+        "page": 39,
+        "score": 0.561
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Can a preauthorized transfer be a condition of receiving credit?",
+    "should_refuse": false,
+    "drafted_answer": "No. Under 12 CFR 1005.10(e)(1), a financial institution \"may not make it a condition for an extension of credit that repayment will be by means of preauthorized EFT,\" except for credit extended under an overdraft credit plan or extended to maintain a specified minimum balance in the consumer's account (CFPB EFTA examination procedures.pdf, p. 45; consumer compliance handbook.pdf, p. 101).\n\nNote that this overdraft/minimum-balance exception does not apply to a covered separate credit feature accessible by a hybrid prepaid-credit card, as defined in Regulation Z, 12 CFR 1026.61 (CFPB EFTA examination procedures.pdf, p. 45).",
+    "retrieved": [
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 45,
+        "score": 0.578
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 139,
+        "score": 0.573
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 101,
+        "score": 0.53
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "question": "What rights does a consumer have to stop payment on a preauthorized transfer, and how much notice is required?",
+    "should_refuse": false,
+    "drafted_answer": "A consumer has the right to stop payment of a preauthorized transfer from their account. They must notify the financial institution—orally or in writing—\"at any time up to three business days before the scheduled date of the transfer\" (12 CFR 1005.10(c)(1)) (consumer compliance handbook.pdf, p. 101; CFPB EFTA examination procedures.pdf, p. 45).\n\nIf the debit item is resubmitted, the institution must continue to honor the stop-payment order (Comment 10(c)-1) (consumer compliance handbook.pdf, p. 101).\n\nThe financial institution may require written confirmation of an oral stop payment order, to be provided within 14 days of the oral notification. If required, the institution must tell the consumer at the time of the oral notice that written confirmation is needed and provide the address to send it to. If the consumer fails to provide the written confirmation, \"the oral stop payment order ceases to be binding after 14 days\" (12 CFR 1005.10(c)(2)) (consumer compliance handbook.pdf, p. 101; CFPB EFTA examination procedures.pdf, p. 45).",
+    "retrieved": [
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 45,
+        "score": 0.695
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 101,
+        "score": 0.679
+      },
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 116,
+        "score": 0.628
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What is an examiner supposed to review regarding error resolution procedures?",
+    "should_refuse": false,
+    "drafted_answer": "Based on the examination procedures, an examiner should review the following regarding error resolution procedures:\n\n1. **The provider's policies and procedures on error resolution** generally (consumer compliance handbook.pdf, p. 131).\n\n2. **Relevant error resolution statements/files, consumer complaints, form letters, etc.**, used in addressing errors or questions concerning remittance transfer transactions (consumer compliance handbook.pdf, p. 131).\n\n3. **The provider's compliance program**, to determine whether it has developed and maintains adequate written policies and procedures designed to ensure compliance with error resolution requirements, specifically considering:\n   - \"The procedures for receiving complaints of error from branches, agents or other locations where a consumer may lodge a complaint\";\n   - \"The procedures for identifying complaints alleging 'errors' as identified in 12 CFR 1005.33(a)\"; and\n   - \"The procedures for investigating, responding to, and resolving complaints\" (CFPB EFTA examination procedures.pdf, p. 103).\n\n4. **The extent of the provider's compliance with its own policies and procedures** on error resolution (CFPB EFTA examination procedures.pdf, p. 103).\n\n5. **The provider's compliance with regulatory requirements** regarding investigation of alleged errors and notification of consumers within the allotted time frames (CFPB EFTA examination procedures.pdf, p. 103).\n\n6. **The timeliness and adequacy of remedies** the provider provides to address identified errors, including:\n   - Whether the provider gave the sender notice regarding the error investigation;\n   - If the sender requested a remedy, whether the provider provided the remedy selected by the sender (or, if a default remedy applies, whether the sender had reasonable time to designate a remedy);\n   - If the remedy is delivery of the correct amount, whether \"the provider corrects the error within one business day, or as soon as reasonably practicable\"; and\n   - If the remedy is a refund, whether \"the provider refunds the appropriate amount within one business day or as soon as reasonably practicable thereafter\" (CFPB EFTA examination procedures.pdf, p. 104).\n\n7. For errors involving incorrect amounts paid by the sender, computational/bookkeeping errors, or failure to make disclosed currency available, whether the provider either **refunds the amount of funds provided by the sender** or **makes available to the designated recipient the amount appropriate to resolve the error without additional cost** (CFPB EFTA examination procedures.pdf, p. 104).",
+    "retrieved": [
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 103,
+        "score": 0.546
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 131,
+        "score": 0.5
+      },
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 104,
+        "score": 0.498
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What is the current federal funds rate?",
+    "should_refuse": true,
+    "drafted_answer": "Not found in the documents",
+    "retrieved": [
+      {
+        "source": "FFIEC retail payment systems booklet pdf.pdf",
+        "page": 1,
+        "score": 0.377
+      },
+      {
+        "source": "FFIEC retail payment systems booklet pdf.pdf",
+        "page": 39,
+        "score": 0.358
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 194,
+        "score": 0.358
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What are the capital requirements under Basel III?",
+    "should_refuse": true,
+    "drafted_answer": "Not found in the documents",
+    "retrieved": [
+      {
+        "source": "FFIEC retail payment systems booklet pdf.pdf",
+        "page": 40,
+        "score": 0.396
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 155,
+        "score": 0.372
+      },
+      {
+        "source": "FFIEC retail payment systems booklet pdf.pdf",
+        "page": 40,
+        "score": 0.366
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "question": "How does the FDIC calculate deposit insurance premiums?",
+    "should_refuse": true,
+    "drafted_answer": "Not found in the documents",
+    "retrieved": [
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 194,
+        "score": 0.429
+      },
+      {
+        "source": "CFPB EFTA examination procedures.pdf",
+        "page": 38,
+        "score": 0.405
+      },
+      {
+        "source": "consumer compliance handbook.pdf",
+        "page": 194,
+        "score": 0.4
+      }
+    ]
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "difficulty": "easy",
+    "question": "How many days does a consumer have to report an error after receiving a periodic statement?",
+    "expected_answer": "The financial institution must receive the consumer's notice of error no later than 60 days after sending the periodic statement or other documentation first reflecting the alleged error (12 CFR 1005.11(b)(1)).",
+    "expected_source": "consumer compliance handbook.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 2,
+    "difficulty": "easy",
+    "question": "How many business days does a financial institution have to investigate a notice of error?",
+    "expected_answer": "10 business days to complete the investigation. It may instead take up to 45 days if it provisionally credits the consumer's account (with interest where applicable) within that 10 business-day period, tells the consumer of the credit within two business days, and gives full use of the funds during the investigation (12 CFR 1005.11(c)).",
+    "expected_source": "CFPB EFTA examination procedures.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 3,
+    "difficulty": "easy",
+    "question": "What is a consumer's maximum liability for an unauthorized transfer if they notify within two business days?",
+    "expected_answer": "The lesser of $50 or the total amount of unauthorized transfers occurring before notice to the financial institution (12 CFR 1005.6(b)(1)).",
+    "expected_source": "consumer compliance handbook.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 4,
+    "difficulty": "easy",
+    "question": "What information must be included in an initial disclosure under Regulation E?",
+    "expected_answer": "Under 12 CFR 1005.7(b), initial disclosures must include: a summary of the consumer's liability for unauthorized transfers; the telephone number and address for reporting unauthorized transfers; the institution's business days; the types of EFTs available and any frequency or dollar limits; any fees; a summary of the right to receipts and periodic statements; a summary of stop-payment rights for preauthorized transfers; the institution's liability to the consumer; the circumstances under which account information will be disclosed to third parties; and the error resolution notice.",
+    "expected_source": "CFPB EFTA examination procedures.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 5,
+    "difficulty": "easy",
+    "question": "What is a remittance transfer under the EFTA?",
+    "expected_answer": "An electronic transfer of funds requested by a consumer in a state to a designated recipient, sent by a remittance transfer provider. It applies whether or not the consumer holds an account and whether or not the transfer is an electronic fund transfer (Regulation E Subpart B). It does not cover funds a sender mails directly to a recipient or hands to a courier.",
+    "expected_source": "CFPB EFTA examination procedures.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 6,
+    "difficulty": "harder",
+    "question": "When can an institution extend its error investigation to 45 days, and what must it do first?",
+    "expected_answer": "It may take up to 45 calendar days if it first provisionally credits the consumer's account for the alleged error amount (including interest where applicable) within 10 business days of receiving the notice, informs the consumer of the amount and date of the credit within two business days, and gives the consumer full use of the funds during the investigation (12 CFR 1005.11(c)(2)). The periods extend to 20 and 90 days for errors within 30 days of the first deposit, and the 45-day period extends to 90 days for transactions not initiated in a state or resulting from a point-of-sale debit card transaction.",
+    "expected_source": "consumer compliance handbook.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 7,
+    "difficulty": "harder",
+    "question": "What must an institution do if it determines no error occurred?",
+    "expected_answer": "Under Regulation E, it must mail or deliver a written explanation of its findings within three business days after concluding the investigation, and tell the consumer of the right to request the documents it relied on (12 CFR 1005.11(d)). If it had provisionally credited the account, it must also notify the consumer of the date and amount of the debit reversing the credit.",
+    "expected_source": "consumer compliance handbook.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 8,
+    "difficulty": "harder",
+    "question": "What are the main risks associated with ACH transactions for a financial institution?",
+    "expected_answer": "Credit risk (an ODFI is exposed until its customer funds the account, and an RDFI when it lets a debit overdraw an account), liquidity risk (inability to settle because of fraud, service disruption, or default of a network participant), operational and transaction risk given the highly automated nature of ACH, plus compliance, legal, reputation, and strategic risk. Third-party service providers do not transfer the ODFI's settlement responsibility.",
+    "expected_source": "FFIEC retail payment systems booklet pdf.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 9,
+    "difficulty": "harder",
+    "question": "What controls should a financial institution have over third-party payment processors?",
+    "expected_answer": "Comprehensive contract provisions and adequate due diligence before engagement, ongoing monitoring of processors for compliance with contracts and service level agreements, review of selected transaction items for accuracy and timeliness, internal controls covering transaction initiation, data entry, computer processing and output distribution, and effective information security. The institution retains responsibility for settlement even when processing is outsourced.",
+    "expected_source": "FFIEC retail payment systems booklet pdf.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 10,
+    "difficulty": "harder",
+    "question": "Can a preauthorized transfer be a condition of receiving credit?",
+    "expected_answer": "No. A financial institution may not condition an extension of credit on repayment by preauthorized electronic fund transfer (12 CFR 1005.10(e)(1)), except for credit extended under an overdraft credit plan or to maintain a specified minimum balance. That exception does not apply to a covered separate credit feature accessible by a hybrid prepaid-credit card.",
+    "expected_source": "CFPB EFTA examination procedures.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 11,
+    "difficulty": "harder",
+    "question": "What rights does a consumer have to stop payment on a preauthorized transfer, and how much notice is required?",
+    "expected_answer": "The consumer may order the institution to stop payment orally or in writing at any time up to three business days before the scheduled transfer date (12 CFR 1005.10(c)(1)). The institution may require written confirmation of an oral order within 14 days, provided it tells the consumer of that requirement and the address at the time of the oral notice; otherwise the oral order ceases to be binding after 14 days. Stop-payment orders must continue to be honoured if the debit is resubmitted.",
+    "expected_source": "consumer compliance handbook.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 12,
+    "difficulty": "harder",
+    "question": "What is an examiner supposed to review regarding error resolution procedures?",
+    "expected_answer": "The institution's written policies and procedures for error resolution, its compliance program, error resolution files, consumer complaints and form letters, the procedures for receiving complaints from branches and agents, for identifying complaints that qualify as errors under 12 CFR 1005.33(a), and for investigating, responding to and resolving them, together with the extent of actual compliance and staff training.",
+    "expected_source": "CFPB EFTA examination procedures.pdf",
+    "should_refuse": false
+  },
+  {
+    "id": 13,
+    "difficulty": "refusal",
+    "question": "What is the current federal funds rate?",
+    "expected_answer": "Not found in the documents",
+    "expected_source": null,
+    "should_refuse": true
+  },
+  {
+    "id": 14,
+    "difficulty": "refusal",
+    "question": "What are the capital requirements under Basel III?",
+    "expected_answer": "Not found in the documents",
+    "expected_source": null,
+    "should_refuse": true
+  },
+  {
+    "id": 15,
+    "difficulty": "refusal",
+    "question": "How does the FDIC calculate deposit insurance premiums?",
+    "expected_answer": "Not found in the documents",
+    "expected_source": null,
+    "should_refuse": true
+  }
+]
