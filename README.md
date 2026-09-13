@@ -113,29 +113,12 @@ score.
 `docs/screenshot.png`. Note that `docs/*.pdf` is gitignored but PNG files there
 are not, so the image will commit normally.*
 
-## Running with Docker
-
-Docker packages the app with its dependencies so it runs identically anywhere.
-
-```
-docker build -t regdocs-qa .
-docker run -p 8501:8501 --env-file .env regdocs-qa
-```
-
-Your API keys are passed in at run time with `--env-file` rather than copied
-into the image, so they never end up baked into something you might share.
-`.dockerignore` excludes `.env` as a second line of defence.
-
-The image includes the prebuilt `chunks.json` and `embeddings.npy`, so the
-container starts ready to answer questions and never needs to repeat the
-two-hour embedding run.
-
 ## Deploying to Hugging Face Spaces
 
 Hugging Face Spaces will host this for free.
 
 1. Create a new Space at huggingface.co/new-space. Choose **Streamlit** as the
-   SDK, or **Docker** if you would rather it use the `Dockerfile` here.
+   SDK.
 2. Add your API keys as secrets. In the Space, go to Settings, then Variables
    and secrets, and add `ANTHROPIC_API_KEY` and `VOYAGE_API_KEY` as **secrets**,
    not as public variables. The app reads them from the environment, so no code
@@ -144,9 +127,8 @@ Hugging Face Spaces will host this for free.
    does not have to rebuild the index. Those two files total about 13MB, which
    is within normal Git limits, but if you add many more documents you will need
    [Git LFS](https://huggingface.co/docs/hub/repositories-getting-started#uploading-large-files).
-4. Streamlit Spaces run `app.py` automatically. For a Docker Space, Hugging Face
-   expects the app on port 7860 rather than 8501, so change the `EXPOSE` line and
-   the `--server.port` in the `Dockerfile` accordingly.
+4. Streamlit Spaces run `app.py` automatically and install everything listed in
+   `requirements.txt`, so there is nothing further to configure.
 5. Keep an eye on the Voyage rate limit. A free Voyage key allows three
    questions per minute across everyone using your Space at once, so a public
    link will hit that quickly. Add a payment method before sharing it widely.
@@ -279,8 +261,11 @@ to track across changes rather than an absolute measure of quality.
   question 6 exposed as the weak spot.
 - **Chroma** — replace the hand-rolled numpy search with a real vector database,
   so lookups stay fast as the document set grows beyond a few thousand chunks.
-  This is the last remaining piece of the original plan; Streamlit and Docker
-  are covered above.
+- **Docker** — package the app so it runs identically on any machine. A
+  Dockerfile was drafted and then removed, because Docker was not installed on
+  the development machine and the image was never built. Untested deployment
+  instructions are worse than none, so this should be written and verified on a
+  machine that can actually build it.
 
 ## Files
 
@@ -293,7 +278,6 @@ to track across changes rather than an absolute measure of quality.
 | `chunks.json` | 2,162 chunks with source file and page |
 | `embeddings.npy` | 2,162 vectors of 1,024 numbers |
 | `app.py` | Streamlit web interface |
-| `Dockerfile` | Packages the app to run anywhere |
 | `requirements.txt` | Pinned dependency versions |
 | `evals/questions.json` | 15 test questions with reference answers |
 | `evals/run.py` | Runs the eval and prints the scorecard |

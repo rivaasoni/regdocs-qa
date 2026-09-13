@@ -89,7 +89,7 @@ sensible default here.
 
 `README.md` documents the project for people arriving at the repository.
 
-### Phase 5 - Making it real (3 of 4 done)
+### Phase 5 - Making it real (2 of 4 done)
 
 - **Evals (done)** - `evals/run.py` scores 15 questions on retrieval hit rate,
   answer correctness via Claude as judge, and refusal accuracy. Current score
@@ -100,9 +100,11 @@ sensible default here.
   rather than Regulation E, since both live in the same PDF.
 - **Streamlit (done)** - `app.py`. Verified serving; caches the index with
   `st.cache_resource` because Streamlit reruns the script on every interaction.
-- **Docker (written, NOT verified)** - `Dockerfile` plus pinned
-  `requirements.txt`. Docker is not installed on the development machine, so
-  the image has never been built. Build it before trusting it.
+- **Docker (not started)** - a Dockerfile was written and then deleted, because
+  Docker is not installed on this machine and the image was never built.
+  Shipping untested deployment instructions is worse than shipping none. Write
+  it on a machine that can build and run it. `requirements.txt` stays either
+  way; it pins the dependencies and Hugging Face Spaces installs from it.
 - **Chroma (not started)** - replace the numpy search with a real vector
   database, so lookups stay fast as the document set grows.
 
